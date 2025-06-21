@@ -2,9 +2,18 @@ import { useState } from "react"; import './index.css';
 
 export default function App() { const [pickupDate, setPickupDate] = useState(""); const [returnDate, setReturnDate] = useState(""); const [location, setLocation] = useState("");
 
-return ( <div className="min-h-screen bg-white"> <header className="relative bg-blue-900 text-white py-20 px-4 text-center"> <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1603871053925-2cc58b6b87e1?auto=format&fit=crop&w=1350&q=80')" }}></div> <div className="relative z-10"> <h1 className="text-5xl font-bold mb-4">Avila Car Rental</h1> <p className="text-xl max-w-xl mx-auto"> Discover premium, reliable car rentals in Miami. Hassle-free booking, great rates, and trusted service. </p> </div> </header>
+return ( <div className="min-h-screen bg-white"> <header className="relative bg-blue-900 text-white py-20 px-4 text-center"> <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1603871053925-2cc58b6b87e1?auto=format&fit=crop&w=1350&q=80')" }}></div> <div className="relative z-10"> <h1 className="text-5xl font-bold mb-4 flex items-center justify-center"> <img
+src="https://img.icons8.com/ios-filled/50/ffffff/sedan.png"
+alt="Logo"
+className="w-10 h-10 mr-3"
+/> Avila Car Rental
 
-<section className="max-w-4xl mx-auto py-16 px-4">
+</h1>
+          <p className="text-xl max-w-xl mx-auto">
+            Discover premium, reliable car rentals in Miami. Hassle-free booking, great rates, and trusted service.
+          </p>
+        </div>
+      </header><section className="max-w-4xl mx-auto py-16 px-4">
     <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Book Your Ride</h2>
     <div className="bg-white shadow-lg rounded-xl p-6 grid gap-4">
       <input type="text" placeholder="Pickup Location" className="border border-gray-300 p-3 rounded w-full" value={location} onChange={(e) => setLocation(e.target.value)} />
