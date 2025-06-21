@@ -36,21 +36,18 @@ return ( <div className="min-h-screen bg-white"> <header className="bg-gradient-
     <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">Our Fleet</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {[
-        { name: "Tesla Model 3", img: "/cars/tesla.jpg" },
-        { name: "Mercedes-Benz C250", img: "/cars/mercedes.jpg" },
-        { name: "Kia Soul", img: "/cars/kiasoul.jpg" },
-        { name: "Kia Rio", img: "/cars/kiario.jpg" },
-        { name: "Land Rover LR2", img: "/cars/landrover.jpg" },
-      ].map((car, idx) => (
+        "Tesla Model 3",
+        "Mercedes-Benz C250",
+        "Kia Soul",
+        "Kia Rio",
+        "Land Rover LR2",
+      ].map((name, idx) => (
         <motion.div
           key={idx}
-          className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+          className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 text-center"
           whileHover={{ scale: 1.03 }}
         >
-          <img src={car.img} alt={car.name} className="w-full h-48 object-cover" />
-          <div className="p-4">
-            <h3 className="text-lg font-semibold text-gray-800">{car.name}</h3>
-          </div>
+          <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
         </motion.div>
       ))}
     </div>
