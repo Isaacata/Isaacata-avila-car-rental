@@ -1,14 +1,61 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; import './index.css';
-
-function Home() { return ( <div className="text-center p-10"> <h1 className="text-4xl font-bold mb-4">Welcome to Avila Car Rental</h1> <p className="text-lg text-gray-600">Affordable. Reliable. Convenient. Book your ride today.</p> </div> ); }
-
-function Fleet() { const cars = [ { name: 'Tesla Model 3', description: 'Electric, modern and efficient.' }, { name: 'Kia Rio', description: 'Economical and compact for city driving.' }, { name: 'Land Rover LR2', description: 'Comfortable SUV with power and space.' } ];
-
-return ( <div className="p-10 max-w-4xl mx-auto"> <h2 className="text-3xl font-bold mb-6 text-center">Our Fleet</h2> <div className="grid md:grid-cols-3 gap-6"> {cars.map((car, index) => ( <div key={index} className="bg-white shadow-md p-4 rounded"> <h3 className="text-xl font-semibold">{car.name}</h3> <p className="text-gray-600 mt-2">{car.description}</p> </div> ))} </div> </div> ); }
-
-function Booking() { return ( <div className="p-10 max-w-xl mx-auto"> <h2 className="text-3xl font-bold mb-6 text-center">Book Your Car</h2> <form action="https://formspree.io/f/your-id" method="POST" className="space-y-4"> <input type="text" name="name" placeholder="Your Name" className="w-full p-3 border rounded" required /> <input type="email" name="email" placeholder="Your Email" className="w-full p-3 border rounded" required /> <input type="text" name="car" placeholder="Car Model" className="w-full p-3 border rounded" required /> <input type="date" name="pickup" className="w-full p-3 border rounded" required /> <input type="date" name="dropoff" className="w-full p-3 border rounded" required /> <button type="submit" className="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 w-full">Reserve</button> </form> </div> ); }
-
-function Contact() { return ( <div className="p-10 max-w-xl mx-auto text-center"> <h2 className="text-3xl font-bold mb-4">Contact Us</h2> <p className="text-gray-700 mb-4">Need help? Reach out on WhatsApp or email us anytime.</p> <a href="https://wa.me/13051234567" className="text-green-600 font-semibold">📱 Chat via WhatsApp</a> </div> ); }
-
-export default function App() { return ( <Router> <nav className="bg-blue-800 text-white p-4 flex justify-between items-center"> <span className="font-bold text-lg">Avila Car Rental</span> <div className="space-x-4"> <Link to="/" className="hover:underline">Home</Link> <Link to="/fleet" className="hover:underline">Fleet</Link> <Link to="/booking" className="hover:underline">Booking</Link> <Link to="/contact" className="hover:underline">Contact</Link> </div> </nav> <Routes> <Route path="/" element={<Home />} /> <Route path="/fleet" element={<Fleet />} /> <Route path="/booking" element={<Booking />} /> <Route path="/contact" element={<Contact />} /> </Routes> <footer className="bg-gray-100 text-center py-6 text-sm text-gray-600"> © {new Date().getFullYear()} Avila Car Rental. All rights reserved. </footer> </Router> ); }
-
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avila Car Rental 305</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Avila Car Rental 305</h1>
+    <a href="https://wa.me/17866127905" class="whatsapp-button">WhatsApp Us</a>
+  </header>  <section class="hero">
+    <h2>Rent a Car Near Miami Airport</h2>
+    <p>Affordable, reliable, and convenient rental cars in Miami, FL.</p>
+  </section>  <section class="cars">
+    <h2>Our Fleet</h2>
+    <div class="car-list">
+      <div class="car">
+        <img src="https://source.unsplash.com/featured/?nissan" alt="Nissan Versa" />
+        <h3>Nissan Versa</h3>
+        <p>Economy</p>
+      </div>
+      <div class="car">
+        <img src="https://source.unsplash.com/featured/?kia" alt="Kia Forte" />
+        <h3>Kia Forte</h3>
+        <p>Compact</p>
+      </div>
+      <div class="car">
+        <img src="https://source.unsplash.com/featured/?toyota" alt="Toyota Corolla" />
+        <h3>Toyota Corolla</h3>
+        <p>Mid-size</p>
+      </div>
+      <!-- Add more cars here -->
+    </div>
+  </section>  <section class="reviews">
+    <h2>Customer Reviews</h2>
+    <blockquote>
+      "Fast and friendly service. The car was clean and ready on time!" – Amanda L.
+    </blockquote>
+    <blockquote>
+      "Great rates and close to the airport. Highly recommend." – Jason P.
+    </blockquote>
+    <blockquote>
+      "Car ran perfectly and the pick-up was quick and easy." – Maria G.
+    </blockquote>
+  </section>  <section class="location">
+    <h2>Find Us</h2>
+    <iframe src="https://www.google.com/maps?q=10878+SW+5th+St,+Miami,+FL+33174&output=embed" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen></iframe>
+  </section>  <section class="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/mwkgyglp" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>  <footer>
+    <p>&copy; 2025 Avila Car Rental 305. All rights reserved.</p>
+  </footer>
+</body>
+</html>
