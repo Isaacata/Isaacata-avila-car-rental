@@ -1,58 +1,73 @@
-import React from "react"; import "./index.css";
+import React from "react";
 
-export default function App() { return ( <div className="bg-gray-100 min-h-screen font-sans"> {/* Header con imagen */} <header className="bg-cover bg-center text-white py-16 px-4" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?auto=format&fit=crop&w=1280&q=80')" }}> <div className="max-w-4xl mx-auto text-center"> <h1 className="text-5xl font-bold mb-2 flex justify-center items-center"> <img src="https://img.icons8.com/ios-filled/50/ffffff/sedan.png" alt="Logo" className="w-10 h-10 mr-3" /> Avila Car Rental </h1> <p className="text-xl mt-2">Premium Rentals in Miami – Drive in Style</p> </div> </header>
+export default function App() { return ( <div className="min-h-screen bg-blue-100 p-4"> <div className="bg-blue-600 text-white p-6 rounded-lg max-w-xl mx-auto shadow-lg"> <h1 className="text-3xl font-bold mb-2 text-center">Cheap Car Rentals Search</h1> <p className="text-center mb-4">Car rental at the best prices</p> <form
+action="https://formspree.io/f/mnqegayk"
+method="POST"
+className="bg-yellow-400 p-4 rounded-md space-y-3"
+> <div> <label className="block mb-1 font-semibold">Pick-up Location</label> <input
+type="text"
+name="location"
+required
+className="w-full px-3 py-2 rounded-md border border-gray-300"
+/> </div>
 
-{/* Why Us */}
-  <section className="py-12 px-4 text-center bg-white">
-    <h2 className="text-3xl font-bold mb-6 text-gray-800">Why Choose Us</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <div className="bg-gray-100 p-6 rounded shadow">
-        <h3 className="font-semibold text-lg">🛡️ Reliable Service</h3>
-        <p className="text-gray-600 mt-2">Trustworthy and hassle-free rentals every time.</p>
-      </div>
-      <div className="bg-gray-100 p-6 rounded shadow">
-        <h3 className="font-semibold text-lg">🚘 Affordable Cars</h3>
-        <p className="text-gray-600 mt-2">Clean, fuel-efficient vehicles for every budget.</p>
-      </div>
-      <div className="bg-gray-100 p-6 rounded shadow">
-        <h3 className="font-semibold text-lg">📍 Great Location</h3>
-        <p className="text-gray-600 mt-2">Conveniently located in Miami for quick pickups.</p>
-      </div>
-    </div>
-  </section>
-
-  {/* Fleet */}
-  <section className="py-12 px-4 bg-gray-50">
-    <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Fleet</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      {["Tesla Model 3", "Mercedes-Benz C250", "Kia Soul", "Kia Rio", "Land Rover LR2"].map((car) => (
-        <div key={car} className="bg-white rounded-lg shadow p-6">
-          <h3 className="text-xl font-semibold text-gray-800">{car}</h3>
-          <p className="text-gray-600">Comfortable & fuel-efficient</p>
+<div className="grid grid-cols-2 gap-2">
+        <div>
+          <label className="block mb-1 font-semibold">Pickup Date</label>
+          <input
+            type="date"
+            name="pickup_date"
+            required
+            className="w-full px-3 py-2 rounded-md border border-gray-300"
+          />
         </div>
-      ))}
-    </div>
-  </section>
+        <div>
+          <label className="block mb-1 font-semibold">Time</label>
+          <input
+            type="time"
+            name="pickup_time"
+            required
+            className="w-full px-3 py-2 rounded-md border border-gray-300"
+          />
+        </div>
+      </div>
 
-  {/* Contact */}
-  <section className="py-12 px-4 bg-white">
-    <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Contact Us</h2>
-    <form
-      action="https://formspree.io/f/your-id"
-      method="POST"
-      className="max-w-2xl mx-auto space-y-4"
-    >
-      <input type="text" name="name" placeholder="Your Name" className="w-full p-3 border rounded" required />
-      <input type="email" name="email" placeholder="Your Email" className="w-full p-3 border rounded" required />
-      <textarea name="message" placeholder="Your Message" className="w-full p-3 border rounded h-32" required></textarea>
-      <button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send Message</button>
+      <div className="grid grid-cols-2 gap-2">
+        <div>
+          <label className="block mb-1 font-semibold">Drop-off Date</label>
+          <input
+            type="date"
+            name="dropoff_date"
+            required
+            className="w-full px-3 py-2 rounded-md border border-gray-300"
+          />
+        </div>
+        <div>
+          <label className="block mb-1 font-semibold">Time</label>
+          <input
+            type="time"
+            name="dropoff_time"
+            required
+            className="w-full px-3 py-2 rounded-md border border-gray-300"
+          />
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-semibold"
+      >
+        Search
+      </button>
     </form>
-  </section>
 
-  {/* Footer */}
-  <footer className="text-center py-6 bg-gray-800 text-white">
-    © {new Date().getFullYear()} Avila Car Rental. All rights reserved.
-  </footer>
+    <ul className="mt-6 text-white text-sm space-y-1">
+      <li>✔ Get up to 30% off</li>
+      <li>✔ Free cancellations</li>
+      <li>✔ Compare over 200 car rental companies</li>
+      <li>✔ Exclusive discounts</li>
+    </ul>
+  </div>
 </div>
 
 ); }
