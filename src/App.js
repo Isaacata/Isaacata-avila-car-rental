@@ -1,10 +1,10 @@
-import { useState } from "react"; import { motion } from "framer-motion"; import './index.css';
+import { useState } from "react"; import './index.css';
 
 export default function App() { const [pickupDate, setPickupDate] = useState(""); const [returnDate, setReturnDate] = useState(""); const [location, setLocation] = useState("");
 
-return ( <div className="min-h-screen bg-white"> <header className="bg-gradient-to-r from-blue-800 to-blue-600 py-10 text-white text-center shadow-lg sticky top-0 z-50"> <motion.h1 className="text-5xl font-bold" initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}> Avila Car Rental </motion.h1> <motion.p className="mt-2 text-lg" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}> Premium Car Rentals in Miami – Fast, Reliable & Affordable </motion.p> </header>
+return ( <div className="min-h-screen bg-white"> <header className="bg-gradient-to-r from-blue-800 to-blue-600 py-10 text-white text-center shadow-lg sticky top-0 z-50"> <h1 className="text-5xl font-bold"> Avila Car Rental </h1> <p className="mt-2 text-lg"> Premium Car Rentals in Miami – Fast, Reliable & Affordable </p> </header>
 
-<motion.section className="max-w-4xl mx-auto py-16 px-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
+<section className="max-w-4xl mx-auto py-16 px-4">
     <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Book Your Ride</h2>
     <div className="bg-white shadow-lg rounded-xl p-6 grid gap-4">
       <input
@@ -30,9 +30,9 @@ return ( <div className="min-h-screen bg-white"> <header className="bg-gradient-
         Find Available Cars
       </button>
     </div>
-  </motion.section>
+  </section>
 
-  <motion.section className="bg-gray-50 py-16 px-4" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+  <section className="bg-gray-50 py-16 px-4">
     <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">Our Fleet</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {[
@@ -42,18 +42,17 @@ return ( <div className="min-h-screen bg-white"> <header className="bg-gradient-
         "Kia Rio",
         "Land Rover LR2",
       ].map((name, idx) => (
-        <motion.div
+        <div
           key={idx}
           className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 text-center"
-          whileHover={{ scale: 1.03 }}
         >
           <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
-        </motion.div>
+        </div>
       ))}
     </div>
-  </motion.section>
+  </section>
 
-  <motion.section className="py-16 px-4" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+  <section className="py-16 px-4">
     <h2 className="text-2xl text-center text-blue-800 font-bold mb-6">Customer Reviews</h2>
     <div className="max-w-4xl mx-auto grid gap-4">
       {[
@@ -61,16 +60,15 @@ return ( <div className="min-h-screen bg-white"> <header className="bg-gradient-
         "Smooth booking process and great customer service.",
         "Highly recommend Avila for your next trip to Miami!"
       ].map((review, idx) => (
-        <motion.div
+        <div
           key={idx}
           className="bg-white shadow rounded p-4 text-center italic"
-          whileHover={{ scale: 1.02 }}
         >
           “{review}”
-        </motion.div>
+        </div>
       ))}
     </div>
-  </motion.section>
+  </section>
 
   <footer className="bg-gray-100 text-center text-sm text-gray-500 py-6 mt-12">
     &copy; {new Date().getFullYear()} Avila Car Rental. All rights reserved.
