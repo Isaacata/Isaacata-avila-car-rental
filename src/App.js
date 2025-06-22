@@ -1,61 +1,59 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avila Car Rental 305</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header>
-    <h1>Avila Car Rental 305</h1>
-    <a href="https://wa.me/17866127905" class="whatsapp-button">WhatsApp Us</a>
-  </header>  <section class="hero">
-    <h2>Rent a Car Near Miami Airport</h2>
-    <p>Affordable, reliable, and convenient rental cars in Miami, FL.</p>
-  </section>  <section class="cars">
-    <h2>Our Fleet</h2>
-    <div class="car-list">
-      <div class="car">
-        <img src="https://source.unsplash.com/featured/?nissan" alt="Nissan Versa" />
-        <h3>Nissan Versa</h3>
-        <p>Economy</p>
-      </div>
-      <div class="car">
-        <img src="https://source.unsplash.com/featured/?kia" alt="Kia Forte" />
-        <h3>Kia Forte</h3>
-        <p>Compact</p>
-      </div>
-      <div class="car">
-        <img src="https://source.unsplash.com/featured/?toyota" alt="Toyota Corolla" />
-        <h3>Toyota Corolla</h3>
-        <p>Mid-size</p>
-      </div>
-      <!-- Add more cars here -->
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-white text-black">
+      <header className="p-6 shadow-md flex justify-between items-center bg-gray-100">
+        <h1 className="text-2xl font-bold">Avila Cars 305</h1>
+        <a href="https://wa.me/17866127905" target="_blank" className="text-green-600 hover:underline">
+          WhatsApp Us
+        </a>
+      </header>
+
+      <main className="p-8">
+        <section className="mb-10 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Car Rental Near Miami Airport</h2>
+          <p className="text-lg">Reliable rentals from our fleet of 13 well-maintained vehicles. Convenient location, 10878 SW 5th St, Miami FL 33174.</p>
+        </section>
+
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {['Toyota Corolla', 'Nissan Versa', 'Kia Forte', 'Hyundai Elantra', 'Chevy Spark', 'Mazda 3', 'Honda Civic', 'Ford Focus', 'Chrysler 200', 'Volkswagen Jetta', 'Jeep Compass', 'Toyota Camry', 'Hyundai Accent'].map((car, i) => (
+            <div key={i} className="border rounded-2xl p-4 shadow-md">
+              <h3 className="text-xl font-medium mb-2">{car}</h3>
+              <p>Clean, reliable, and ready for your trip.</p>
+            </div>
+          ))}
+        </section>
+
+        <section className="mt-12">
+          <h3 className="text-2xl font-semibold mb-4">Customer Reviews</h3>
+          <ul className="space-y-4">
+            <li className="bg-gray-50 p-4 rounded-xl shadow">"Great service! Easy pick-up and return near the airport." - Maria G.</li>
+            <li className="bg-gray-50 p-4 rounded-xl shadow">"Very clean car, host was super responsive on WhatsApp." - John T.</li>
+            <li className="bg-gray-50 p-4 rounded-xl shadow">"Affordable rates and great communication." - Leila R.</li>
+          </ul>
+        </section>
+
+        <section className="mt-12">
+          <h3 className="text-2xl font-semibold mb-4">Contact Us</h3>
+          <form className="grid gap-4 max-w-lg" action="mailto:avilacars305@gmail.com" method="POST" encType="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required className="border p-2 rounded" />
+            <input type="email" name="email" placeholder="Your Email" required className="border p-2 rounded" />
+            <textarea name="message" placeholder="Your Message" required className="border p-2 rounded" rows="4"></textarea>
+            <button type="submit" className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Send Message</button>
+          </form>
+        </section>
+
+        <section className="mt-12">
+          <iframe
+            className="w-full h-64 rounded-xl border"
+            src="https://maps.google.com/maps?q=10878%20SW%205th%20St,%20Miami%20FL%2033174&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            allowFullScreen
+          ></iframe>
+        </section>
+      </main>
+
+      <footer className="p-4 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Avila Cars 305. All rights reserved.
+      </footer>
     </div>
-  </section>  <section class="reviews">
-    <h2>Customer Reviews</h2>
-    <blockquote>
-      "Fast and friendly service. The car was clean and ready on time!" – Amanda L.
-    </blockquote>
-    <blockquote>
-      "Great rates and close to the airport. Highly recommend." – Jason P.
-    </blockquote>
-    <blockquote>
-      "Car ran perfectly and the pick-up was quick and easy." – Maria G.
-    </blockquote>
-  </section>  <section class="location">
-    <h2>Find Us</h2>
-    <iframe src="https://www.google.com/maps?q=10878+SW+5th+St,+Miami,+FL+33174&output=embed" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen></iframe>
-  </section>  <section class="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/mwkgyglp" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>  <footer>
-    <p>&copy; 2025 Avila Car Rental 305. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+  );
+}
